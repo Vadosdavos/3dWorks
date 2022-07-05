@@ -1,7 +1,6 @@
 import './App.css';
 import React, { useCallback, useState } from 'react';
 import { RenderingItem } from './components/RenderingItem/RenderingItem';
-import { Line } from './components/Line/Line';
 import { Model } from './components/3dmodel/3dmodel';
 
 export const App = () => {
@@ -43,7 +42,6 @@ export const App = () => {
         </div>
       </header>
       <RenderingItem type={shape} />
-      {/* <Line /> */}
       <Model />
     </>
   );

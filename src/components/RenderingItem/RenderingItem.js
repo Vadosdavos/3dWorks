@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import React, { useEffect, useRef } from 'react';
+import tex from './tex.jpg';
 
 export const RenderingItem = ({ type }) => {
   const geometries = {
@@ -22,7 +23,9 @@ export const RenderingItem = ({ type }) => {
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
 
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    const texture = new THREE.TextureLoader().load(tex);
+
+    const material = new THREE.MeshBasicMaterial({ map: texture });
     const shape = new THREE.Mesh(geometries[type], material);
     scene.add(shape);
 
@@ -45,5 +48,5 @@ export const RenderingItem = ({ type }) => {
     };
   }, [type]);
 
-  return <div ref={refContainer}  className='container' />;
+  return <div ref={refContainer} className='container' />;
 };
