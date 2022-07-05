@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import React, { useEffect, useRef } from 'react';
+import modelPath from './scene.glb';
 
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4));
@@ -32,7 +33,7 @@ export const Model = () => {
     const loader = new GLTFLoader();
 
     loader.load(
-      '/scene.glb',
+      modelPath,
       function(gltf) {
         scene.add(gltf.scene);
       },
