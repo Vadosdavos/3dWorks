@@ -16,19 +16,34 @@ export const App = () => {
 
   return (
     <>
-      <div className='app'>
-        <label>
-          <input type='radio' name='shapeType' onChange={handleInputChange} value='cube'></input>Cube
-        </label>
-        <label>
-          <input type='radio' name='shapeType' onChange={handleInputChange} value='sphere'></input>Sphere
-        </label>
-        <label>
-          <input type='radio' name='shapeType' onChange={handleInputChange} value='tetrahedron'></input>Tetrahedron
-        </label>
-      </div>
+      <header className='header'>
+        <div className='button'>
+          <input type='radio' name='shapeType' id='cube' onChange={handleInputChange} value='cube'></input>
+          <label className='labelBtn' htmlFor='cube'>
+            Cube
+          </label>
+        </div>
+        <div className='button'>
+          <input type='radio' name='shapeType' id='sphere' onChange={handleInputChange} value='sphere'></input>
+          <label className='labelBtn' htmlFor='sphere'>
+            Sphere
+          </label>
+        </div>
+        <div className='button'>
+          <input
+            type='radio'
+            name='shapeType'
+            id='tetrahedron'
+            onChange={handleInputChange}
+            value='tetrahedron'
+          ></input>
+          <label className='labelBtn' htmlFor='tetrahedron'>
+            Tetrahedron
+          </label>
+        </div>
+      </header>
       <RenderingItem type={shape} />
-      <Line />
+      {/* <Line /> */}
       <Model />
     </>
   );
