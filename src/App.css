@@ -6,6 +6,12 @@
   padding-left: 25vw;
 }
 
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  height: 95vh;
+}
+
 .button {
   width: 100px;
   height: 40px;
