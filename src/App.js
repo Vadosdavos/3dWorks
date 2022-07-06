@@ -2,6 +2,8 @@ import './App.css';
 import React, { useCallback, useState } from 'react';
 import { RenderingItem } from './components/RenderingItem/RenderingItem';
 import { Model } from './components/3dmodel/3dmodel';
+import { Fiber } from './components/Fiber/Fiber';
+import { Canvas } from '@react-three/fiber';
 
 export const App = () => {
   const [shape, setShape] = useState('cube');
@@ -42,7 +44,13 @@ export const App = () => {
         </div>
       </header>
       <RenderingItem type={shape} />
-      <Model />
+      {/* <Model /> */}
+      <Canvas style={{ width: '720px', height: '360px', margin: '0 auto' }}>
+        <ambientLight />
+        <pointLight position={[10, 10, 10]} />
+        <Fiber position={[-3, 0, 0]} />
+        <Fiber position={[3, 0, 0]} />
+      </Canvas>
     </>
   );
 };
