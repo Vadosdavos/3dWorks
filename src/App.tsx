@@ -12,7 +12,7 @@ export const App = (): JSX.Element => {
       </header>
       <div className='mainContainer'>
         <Controls />
-        <Canvas className='mainCanvas'>
+        <Canvas>
           <Scene />
         </Canvas>
       </div>

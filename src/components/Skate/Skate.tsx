@@ -1,8 +1,9 @@
-import * as THREE from 'three';
 import React, { useState, useRef, useEffect } from 'react';
-import { extend, useFrame, useLoader } from '@react-three/fiber';
+import { useLoader } from '@react-three/fiber';
 import skateModel from '../../assets/models/skate.glb';
 import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+
+const ROTATE_Y_90 = Math.PI * 0.5;
 
 export const Skate = (props: JSX.IntrinsicElements['mesh']) => {
   const [hovered, setHovered] = useState(false);
@@ -21,7 +22,8 @@ export const Skate = (props: JSX.IntrinsicElements['mesh']) => {
     <primitive
       ref={model}
       object={skate.scene}
-      scale={[0.1, 0.1, 0.1]}
+      scale={[1, 1, 1]}
+      rotation={[0, ROTATE_Y_90, 0]}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     />
