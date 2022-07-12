@@ -1,17 +1,29 @@
 import * as THREE from 'three';
-import React, { useState, useRef } from 'react';
-import { useFrame, useLoader } from '@react-three/fiber';
-import tex from '../../assets/textures/tex.jpg';
+import React, { useState, useRef, useEffect } from 'react';
+import { extend, useFrame, useLoader } from '@react-three/fiber';
 import skateModel from '../../assets/models/skate.glb';
 import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 export const Skate = (props: JSX.IntrinsicElements['mesh']) => {
+  const [hovered, setHovered] = useState(false);
   const skate = useLoader(GLTFLoader, skateModel) as GLTF;
   const model = useRef(skate.scene);
 
-  useFrame(() => {
-    model.current.rotation.x += 0.01;
-  });
+  useEffect(() => {
+    if (hovered) {
+      document.body.style.cursor = 'pointer';
+    } else {
+      document.body.style.cursor = 'default';
+    }
+  }, [hovered]);
 
-  return <primitive ref={model} object={skate.scene} scale={[2, 2, 2]} position={[0, 0, -100]} />;
+  return (
+    <primitive
+      ref={model}
+      object={skate.scene}
+      scale={[0.1, 0.1, 0.1]}
+      onPointerOver={() => setHovered(true)}
+      onPointerOut={() => setHovered(false)}
+    />
+  );
 };

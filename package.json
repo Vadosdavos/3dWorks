@@ -5,6 +5,7 @@
   "main": "index.tsx",
   "homepage": "https://vadosdavos.github.io/3dWorks/",
   "dependencies": {
+    "@react-three/drei": "^9.17.1",
     "@react-three/fiber": "^8.0.27",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
