@@ -1,2 +1,1 @@
-# My 3dWorks: 
-https://vadosdavos.github.io/3dWorks/
+# Deploy: https://vadosdavos.github.io/Skateboard-3d-configurator/
