@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/3dWorks/precache-manifest.bc09d28d7955b588865f68f037577174.js"
+  "/Skateboard-3d-configurator/precache-manifest.dd447fb26351ff4f9ccbb77252de1f6c.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/3dWorks/index.html", {
+workbox.routing.registerNavigationRoute("/Skateboard-3d-configurator/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
