@@ -6,9 +6,3 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(200, 223, 253);
 }
-
-.container {
-  height: 360px;
-  width: 360px;
-  margin: 0 auto;
-}

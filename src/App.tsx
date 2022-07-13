@@ -3,19 +3,31 @@ import { Controls } from './components/Controls/Controls';
 import { Canvas } from '@react-three/fiber';
 import './App.css';
 import { Scene } from './components/Scene';
+import { useSelector } from 'react-redux';
+import { RootState } from './store/store';
 
 export const App = (): JSX.Element => {
+  const bgColor = useSelector((state: RootState) => state.colors.bgColor);
+  const deckColor = useSelector((state: RootState) => state.colors.deckColor);
+
   return (
     <>
-      <div className='header'>
-        <h2>3d constructor</h2>
-      </div>
-      <div className='mainContainer'>
+      <header className='header'>
+        <h2>Skateboard 3d configurator</h2>
+      </header>
+      <main className='mainContainer'>
         <Controls />
-        <Canvas>
-          <Scene />
-        </Canvas>
-      </div>
+        <div className='canvasContainer'>
+          <Canvas>
+            <Scene bgColor={bgColor} deckColor={deckColor} />
+          </Canvas>
+        </div>
+      </main>
+      <footer className='footer'>
+        <div>
+          <a href='https://github.com/Vadosdavos'>@Vadosdavos</a>, 2022
+        </div>
+      </footer>
     </>
   );
 };

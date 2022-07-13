@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { extend, Object3DNode, useThree } from '@react-three/fiber';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { Skate } from './Skate/Skate';
+import { colorState } from '../store/slices/colorSlice';
 
 extend({ OrbitControls });
 
@@ -14,7 +15,7 @@ declare global {
   }
 }
 
-export const Scene = () => {
+export const Scene = ({ bgColor, deckColor }: colorState) => {
   const target = new THREE.Vector3(0, 0, 0);
   const {
     scene,
@@ -27,13 +28,17 @@ export const Scene = () => {
     camera.lookAt(target);
   }, []);
 
+  useEffect(() => {
+    scene.background = new THREE.Color(bgColor);
+  }, [bgColor]);
+
   return (
     <>
       <orbitControls args={[camera, domElement]} target={target} maxDistance={100} minDistance={20} />
       <hemisphereLight intensity={0.8} position={[0, 10, 0]} />
       <directionalLight intensity={0.5} position={[0, -10, 0]} />
       <directionalLight intensity={1} position={[0, 10, 0]} />
-      <Skate />
+      <Skate deckColor={deckColor} />
     </>
   );
 };
