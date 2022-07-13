@@ -32,6 +32,7 @@ export const Scene = () => {
       <orbitControls args={[camera, domElement]} target={target} maxDistance={100} minDistance={20} />
       <hemisphereLight intensity={0.8} position={[0, 10, 0]} />
       <directionalLight intensity={0.5} position={[0, -10, 0]} />
+      <directionalLight intensity={1} position={[0, 10, 0]} />
       <Skate />
     </>
   );

@@ -7,9 +7,9 @@ import { Scene } from './components/Scene';
 export const App = (): JSX.Element => {
   return (
     <>
-      <header className='header'>
+      <div className='header'>
         <h2>3d constructor</h2>
-      </header>
+      </div>
       <div className='mainContainer'>
         <Controls />
         <Canvas>
