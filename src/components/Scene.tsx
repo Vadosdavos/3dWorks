@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { extend, Object3DNode, useThree } from '@react-three/fiber';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { Skate } from './Skate/Skate';

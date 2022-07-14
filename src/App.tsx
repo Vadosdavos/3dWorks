@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Controls } from './components/Controls/Controls';
 import { Canvas } from '@react-three/fiber';
 import './App.css';
 import { Scene } from './components/Scene';
 import { useSelector } from 'react-redux';
 import { RootState } from './store/store';
+import { CustomLoader } from './components/CustomLoader/CustomLoader';
 
 export const App = (): JSX.Element => {
   const bgColor = useSelector((state: RootState) => state.colors.bgColor);
@@ -18,9 +19,11 @@ export const App = (): JSX.Element => {
       <main className='mainContainer'>
         <Controls />
         <div className='canvasContainer'>
-          <Canvas>
-            <Scene bgColor={bgColor} deckColor={deckColor} />
-          </Canvas>
+          <Suspense fallback={<CustomLoader />}>
+            <Canvas>
+              <Scene bgColor={bgColor} deckColor={deckColor} />
+            </Canvas>
+          </Suspense>
         </div>
       </main>
       <footer className='footer'>
