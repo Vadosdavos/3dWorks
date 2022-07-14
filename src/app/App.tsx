@@ -1,11 +1,11 @@
 import React, { Suspense } from 'react';
-import { Controls } from './components/Controls/Controls';
+import { Controls } from '../components/Controls/Controls';
 import { Canvas } from '@react-three/fiber';
-import './App.css';
-import { Scene } from './components/Scene';
+import styles from './App.module.css';
+import { Scene } from '../components/Scene';
 import { useSelector } from 'react-redux';
-import { RootState } from './store/store';
-import { CustomLoader } from './components/CustomLoader/CustomLoader';
+import { RootState } from '../store/store';
+import { CustomLoader } from '../components/CustomLoader/CustomLoader';
 
 export const App = (): JSX.Element => {
   const bgColor = useSelector((state: RootState) => state.colors.bgColor);
@@ -13,12 +13,12 @@ export const App = (): JSX.Element => {
 
   return (
     <>
-      <header className='header'>
+      <header className={styles.header}>
         <h2>Skateboard 3d configurator</h2>
       </header>
-      <main className='mainContainer'>
+      <main className={styles.mainContainer}>
         <Controls />
-        <div className='canvasContainer'>
+        <div className={styles.canvasContainer}>
           <Suspense fallback={<CustomLoader />}>
             <Canvas>
               <Scene bgColor={bgColor} deckColor={deckColor} />
@@ -26,7 +26,7 @@ export const App = (): JSX.Element => {
           </Suspense>
         </div>
       </main>
-      <footer className='footer'>
+      <footer className={styles.footer}>
         <div>
           <a href='https://github.com/Vadosdavos'>@Vadosdavos</a>, 2022
         </div>

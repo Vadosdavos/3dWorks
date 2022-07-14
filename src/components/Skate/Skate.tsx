@@ -8,7 +8,6 @@ import { colorState } from '../../store/slices/colorSlice';
 const ROTATE_Y_90 = Math.PI * 0.5;
 
 export const Skate = ({ deckColor }: colorState) => {
-  const [hovered, setHovered] = useState(false);
   const skate = useLoader(GLTFLoader, skateModel) as GLTF & ObjectMap;
   const model = useRef(skate.scene);
 
@@ -23,22 +22,12 @@ export const Skate = ({ deckColor }: colorState) => {
     deck.material = newColor;
   }, [deckColor]);
 
-  useEffect(() => {
-    if (hovered) {
-      document.body.style.cursor = 'pointer';
-    } else {
-      document.body.style.cursor = 'default';
-    }
-  }, [hovered]);
-
   return (
     <primitive
       ref={model}
       object={skate.scene}
       scale={[1, 1, 1]}
       rotation={[0, ROTATE_Y_90, 0]}
-      onPointerOver={() => setHovered(true)}
-      onPointerOut={() => setHovered(false)}
     />
   );
 };
