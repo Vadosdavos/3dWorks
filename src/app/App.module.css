@@ -36,37 +36,19 @@ a {
   overflow: hidden;
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
   cursor: all-scroll;
+  position: relative;
 }
 
-.button {
-  width: 100px;
-  height: 40px;
-  text-align: center;
-}
-
-.labelBtn {
-  display: block;
-  cursor: pointer;
-  line-height: 1.8em;
-  color: white;
-  background: #20b8be;
-  border-radius: 5px;
-  font-weight: 600;
-  white-space: nowrap;
-  line-height: 2rem;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-}
-
-.button input[type='radio'] {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.button input[type='radio']:checked + .labelBtn {
-  background: #2254fa;
-}
-
-.labelBtn:hover {
-  background-color: #17a2b8;
-  border-color: #17a2b8;
+.tipBox {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  font-size: 0.6rem;
+  font-style: italic;
+  font-weight: bolder;
+  opacity: 0.5;
+  bottom: 20px;
+  left: 100px;
 }

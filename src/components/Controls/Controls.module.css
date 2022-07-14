@@ -4,7 +4,7 @@
 
 .colorsContainer {
   display: flex;
-  column-gap: 10px;
+  column-gap: 15px;
 }
 
 .colorItem {
@@ -12,4 +12,10 @@
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
+  box-shadow: 0 0 5px 2px rgb(170, 206, 252);
+  transition: 0.5s;
+}
+
+.colorItem:hover {
+  box-shadow: 0 0 7px 4px rgb(95, 163, 252);
 }

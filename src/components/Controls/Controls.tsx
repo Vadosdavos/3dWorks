@@ -21,7 +21,6 @@ export const Controls = () => {
 
   return (
     <div className={styles.controlsContainer}>
-      <h3>Control panel</h3>
       <h5>Background color</h5>
       <input type='color' id='bgColorInput' value={bgColorValue} onInput={handleBgColorInput} />
       <h5>Deck print color</h5>
@@ -36,6 +35,7 @@ export const Controls = () => {
           />
         ))}
       </div>
+      <h5>Deck print texture</h5>
     </div>
   );
 };

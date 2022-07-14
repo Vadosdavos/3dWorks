@@ -23,6 +23,10 @@ export const App = (): JSX.Element => {
             <Canvas>
               <Scene bgColor={bgColor} deckColor={deckColor} />
             </Canvas>
+            <div className={styles.tipBox}>
+              <span>Scroll to zoom in</span>
+              <span>Click and drag to rotate</span>
+            </div>
           </Suspense>
         </div>
       </main>
