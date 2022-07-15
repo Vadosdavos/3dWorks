@@ -8,20 +8,21 @@ import { RootState } from '../store/store';
 import { CustomLoader } from '../components/CustomLoader/CustomLoader';
 
 export const App = (): JSX.Element => {
-  const bgColor = useSelector((state: RootState) => state.colors.bgColor);
-  const deckColor = useSelector((state: RootState) => state.colors.deckColor);
+  const bgColor = useSelector((state: RootState) => state.settings.bgColor);
+  const deckColor = useSelector((state: RootState) => state.settings.deckColor);
+  const state = useSelector((state: RootState) => state);
 
   return (
     <>
       <header className={styles.header}>
-        <h2>Skateboard 3d configurator</h2>
+        <h2 className={styles.mainTitle}>Skateboard 3d configurator</h2>
       </header>
       <main className={styles.mainContainer}>
         <Controls />
         <div className={styles.canvasContainer}>
           <Suspense fallback={<CustomLoader />}>
             <Canvas>
-              <Scene bgColor={bgColor} deckColor={deckColor} />
+              <Scene state={state.settings} />
             </Canvas>
             <div className={styles.tipBox}>
               <span>Scroll to zoom in</span>

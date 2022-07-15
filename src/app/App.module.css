@@ -10,7 +10,7 @@ a {
   text-align: center;
 }
 
-.header h2 {
+.mainTitle {
   margin: 0;
 }
 
@@ -40,6 +40,7 @@ a {
 }
 
 .tipBox {
+  font-family: 'Segoe UI', sans-serif;
   position: absolute;
   z-index: 2;
   display: flex;

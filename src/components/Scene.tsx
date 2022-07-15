@@ -1,9 +1,9 @@
 import * as THREE from 'three';
-import React, { Suspense, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { extend, Object3DNode, useThree } from '@react-three/fiber';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { Skate } from './Skate/Skate';
-import { colorState } from '../store/slices/colorSlice';
+import { statePropsType } from '../constants/types';
 
 extend({ OrbitControls });
 
@@ -15,7 +15,8 @@ declare global {
   }
 }
 
-export const Scene = ({ bgColor, deckColor }: colorState) => {
+export const Scene = ({ state }: statePropsType) => {
+  const { bgColor } = state;
   const target = new THREE.Vector3(0, 0, 0);
   const {
     scene,
@@ -38,7 +39,7 @@ export const Scene = ({ bgColor, deckColor }: colorState) => {
       <hemisphereLight intensity={0.8} position={[0, 10, 0]} />
       <directionalLight intensity={0.5} position={[0, -10, 0]} />
       <directionalLight intensity={1} position={[0, 10, 0]} />
-      <Skate deckColor={deckColor} />
+      <Skate state={state} />
     </>
   );
 };

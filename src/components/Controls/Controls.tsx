@@ -1,22 +1,31 @@
 import React, { SyntheticEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { changeBgColor, changeDeckColor } from '../../store/slices/colorSlice';
+import { changeBgColor, changeDeckColor, changeDeckTexture, changeTarget } from '../../store/slices/settingsSlice';
 import styles from './Controls.module.css';
+import { COLORS, TEXTURES, TEX_NAME_START_INDEX, TEX_NAME_END_INDEX } from '../../constants/constants';
+import { TargetType } from '../../constants/types';
 
 export const Controls = () => {
-  const colors = ['red', 'white', 'blue', 'green', 'yellow'];
   const [bgColorValue, setBgColorValue] = useState('#ffffff');
   const dispatch = useDispatch();
 
   const handleDeckColorClick = (event: SyntheticEvent) => {
     const target = event.target as HTMLDivElement;
     dispatch(changeDeckColor(target.id));
+    dispatch(changeTarget(TargetType.deckColor));
+  };
+
+  const handleDeckTextureClick = (event: SyntheticEvent) => {
+    const target = event.target as HTMLDivElement;
+    dispatch(changeDeckTexture(target.id));
+    dispatch(changeTarget(TargetType.texture));
   };
 
   const handleBgColorInput = (event: SyntheticEvent) => {
     const target = event.target as HTMLInputElement;
     dispatch(changeBgColor(target.value));
     setBgColorValue(target.value);
+    dispatch(changeTarget(TargetType.bgColor));
   };
 
   return (
@@ -25,17 +34,28 @@ export const Controls = () => {
       <input type='color' id='bgColorInput' value={bgColorValue} onInput={handleBgColorInput} />
       <h5>Deck print color</h5>
       <div className={styles.colorsContainer}>
-        {colors.map((el) => (
+        {COLORS.map((el) => (
           <div
             key={el}
             style={{ backgroundColor: el }}
-            className={styles.colorItem}
+            className={styles.controlItem}
             onClick={handleDeckColorClick}
             id={el}
           />
         ))}
       </div>
       <h5>Deck print texture</h5>
+      <div className={styles.texturesContainer}>
+        {TEXTURES.map((el) => (
+          <div
+            key={el}
+            style={{ backgroundImage: `url(${el})` }}
+            className={styles.controlItem}
+            onClick={handleDeckTextureClick}
+            id={el.slice(el.length - TEX_NAME_START_INDEX, el.length - TEX_NAME_END_INDEX)}
+          />
+        ))}
+      </div>
     </div>
   );
 };
