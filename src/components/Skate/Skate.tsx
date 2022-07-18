@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useMemo } from 'react';
+import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { ObjectMap, useLoader } from '@react-three/fiber';
 import skateModel from '../../assets/models/skate.glb';
@@ -10,12 +10,13 @@ import { TEXTURES } from '../../constants/constants';
 const ROTATE_Y_90 = Math.PI * 0.5;
 
 export const Skate = ({ state }: statePropsType) => {
-  const { deckColor, deckTexture, target } = state;
+  const { deckColor, deckTexture, target, wheelsColor } = state;
   const skate = useLoader(GLTFLoader, skateModel) as GLTF & ObjectMap;
   const model = useRef(skate.scene);
   const threeTextures = useLoader(TextureLoader, TEXTURES);
 
   const deck = skate.nodes['Rear_Truck_HP_bushing2_Wood_0'] as THREE.Mesh;
+  const wheels = skate.nodes['Rear_Truck_HP_bushing2_Wheels_0'] as THREE.Mesh;
 
   useEffect(() => {
     switch (target) {
@@ -24,6 +25,13 @@ export const Skate = ({ state }: statePropsType) => {
           color: new THREE.Color(deckColor),
         });
         deck.material = newColor;
+        break;
+
+      case TargetType.wheelsColor:
+        const newWheelsColor = new THREE.MeshStandardMaterial({
+          color: new THREE.Color(wheelsColor),
+        });
+        wheels.material = newWheelsColor;
         break;
 
       case TargetType.texture:
@@ -40,18 +48,7 @@ export const Skate = ({ state }: statePropsType) => {
       default:
         break;
     }
-  }, [deckColor, deckTexture, target]);
-
-  // useEffect(() => {
-  //   if (target === TargetType.texture) {
-  //     console.log(deckTexture);
-  //   }
-  //   texture.wrapS = THREE.RepeatWrapping;
-  //   texture.wrapT = THREE.RepeatWrapping;
-  //   texture.repeat.set(3, 3);
-  //   const newPrint = new THREE.MeshStandardMaterial({ map: texture });
-  //   deck.material = newPrint;
-  // }, [deckTexture]);
+  }, [deckColor, deckTexture, target, wheelsColor]);
 
   return <primitive ref={model} object={skate.scene} scale={[1, 1, 1]} rotation={[0, -ROTATE_Y_90, 0]} />;
 };

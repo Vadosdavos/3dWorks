@@ -28,3 +28,30 @@
   height: 80px;
   border-radius: 25%;
 }
+
+.bgColorContainer {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 0 5px 2px rgb(170, 206, 252);
+  transition: 0.5s;
+}
+
+input[type='color'] {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+}
+input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type='color']::-webkit-color-swatch {
+  border: none;
+}

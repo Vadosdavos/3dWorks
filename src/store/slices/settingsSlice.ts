@@ -4,6 +4,7 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 export interface settingsState {
   bgColor: string,
   deckColor: string,
+  wheelsColor: string,
   deckTexture: string,
   target: string
 }
@@ -11,6 +12,7 @@ export interface settingsState {
 const initialState: settingsState = {
   bgColor: 'white',
   deckColor: '',
+  wheelsColor: '',
   deckTexture: '',
   target: 'deckColor'
 }
@@ -25,6 +27,9 @@ export const settingsSlice = createSlice({
     changeDeckColor: (state, action: PayloadAction<string>) => {
       state.deckColor = action.payload
     },
+    changeWheelsColor: (state, action: PayloadAction<string>) => {
+      state.wheelsColor = action.payload
+    },
     changeDeckTexture: (state, action: PayloadAction<string>) => {
       state.deckTexture = action.payload;
     },
@@ -34,6 +39,6 @@ export const settingsSlice = createSlice({
   },
 })
 
-export const { changeBgColor, changeDeckColor, changeDeckTexture, changeTarget } = settingsSlice.actions
+export const { changeBgColor, changeDeckColor, changeDeckTexture, changeTarget, changeWheelsColor } = settingsSlice.actions
 
 export default settingsSlice.reducer

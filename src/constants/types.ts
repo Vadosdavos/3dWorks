@@ -8,4 +8,5 @@ export enum TargetType {
   deckColor = 'deckColor',
   texture = 'texture',
   bgColor = 'bgColor',
+  wheelsColor = 'wheelsColor',
 }
