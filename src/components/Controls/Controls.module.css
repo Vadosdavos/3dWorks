@@ -55,3 +55,19 @@ input[type='color']::-webkit-color-swatch-wrapper {
 input[type='color']::-webkit-color-swatch {
   border: none;
 }
+
+@media (max-width: 850px) {
+  .controlsContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 80vw;
+    align-items: center;
+  }
+  
+  .controlsContainer div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+}

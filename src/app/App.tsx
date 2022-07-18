@@ -8,8 +8,6 @@ import { RootState } from '../store/store';
 import { CustomLoader } from '../components/CustomLoader/CustomLoader';
 
 export const App = (): JSX.Element => {
-  const bgColor = useSelector((state: RootState) => state.settings.bgColor);
-  const deckColor = useSelector((state: RootState) => state.settings.deckColor);
   const state = useSelector((state: RootState) => state);
 
   return (

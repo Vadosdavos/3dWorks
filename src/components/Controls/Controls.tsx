@@ -42,45 +42,53 @@ export const Controls = () => {
 
   return (
     <div className={styles.controlsContainer}>
-      <h5>Background color</h5>
-      <div className={styles.bgColorContainer}>
-        <input type='color' id='bgColorInput' value={bgColorValue} onInput={handleBgColorInput} />
+      <div>
+        <h5>Background color</h5>
+        <div className={styles.bgColorContainer}>
+          <input type='color' id='bgColorInput' value={bgColorValue} onInput={handleBgColorInput} />
+        </div>
       </div>
-      <h5>Deck print color</h5>
-      <div className={styles.colorsContainer}>
-        {COLORS.map((el) => (
-          <div
-            key={el}
-            style={{ backgroundColor: el }}
-            className={styles.controlItem}
-            onClick={handleDeckColorClick}
-            id={el}
-          />
-        ))}
+      <div>
+        <h5>Deck print color</h5>
+        <div className={styles.colorsContainer}>
+          {COLORS.map((el) => (
+            <div
+              key={el}
+              style={{ backgroundColor: el }}
+              className={styles.controlItem}
+              onClick={handleDeckColorClick}
+              id={el}
+            />
+          ))}
+        </div>
       </div>
-      <h5>Deck print texture</h5>
-      <div className={styles.texturesContainer}>
-        {TEXTURES.map((el) => (
-          <div
-            key={el}
-            style={{ backgroundImage: `url(${el})` }}
-            className={styles.controlItem}
-            onClick={handleDeckTextureClick}
-            id={el.slice(el.length - TEX_NAME_START_INDEX, el.length - TEX_NAME_END_INDEX)}
-          />
-        ))}
+      <div>
+        <h5>Wheels color</h5>
+        <div className={styles.colorsContainer}>
+          {COLORS.map((el) => (
+            <div
+              key={el}
+              style={{ backgroundColor: el }}
+              className={styles.controlItem}
+              onClick={handleWheelsColorClick}
+              id={el}
+            />
+          ))}
+        </div>
       </div>
-      <h5>Wheels color</h5>
-      <div className={styles.colorsContainer}>
-        {COLORS.map((el) => (
-          <div
-            key={el}
-            style={{ backgroundColor: el }}
-            className={styles.controlItem}
-            onClick={handleWheelsColorClick}
-            id={el}
-          />
-        ))}
+      <div>
+        <h5>Deck print texture</h5>
+        <div className={styles.texturesContainer}>
+          {TEXTURES.map((el) => (
+            <div
+              key={el}
+              style={{ backgroundImage: `url(${el})` }}
+              className={styles.controlItem}
+              onClick={handleDeckTextureClick}
+              id={el.slice(el.length - TEX_NAME_START_INDEX, el.length - TEX_NAME_END_INDEX)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
