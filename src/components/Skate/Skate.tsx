@@ -6,6 +6,8 @@ import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { TextureLoader } from 'three';
 import { statePropsType, TargetType } from '../../constants/types';
 import { TEXTURES } from '../../constants/constants';
+import metalMapTex from '../../assets/textures/metalMap.png';
+import normalMapTex from '../../assets/textures/normalMap.png';
 
 const ROTATE_Y_90 = Math.PI * 0.5;
 
@@ -14,17 +16,25 @@ export const Skate = ({ state }: statePropsType) => {
   const skate = useLoader(GLTFLoader, skateModel) as GLTF & ObjectMap;
   const model = useRef(skate.scene);
   const threeTextures = useLoader(TextureLoader, TEXTURES);
+  const normalMap = useLoader(TextureLoader, normalMapTex);
+  const metalMap = useLoader(TextureLoader, metalMapTex);
 
   const deck = skate.nodes['Rear_Truck_HP_bushing2_Wood_0'] as THREE.Mesh;
   const wheels = skate.nodes['Rear_Truck_HP_bushing2_Wheels_0'] as THREE.Mesh;
 
+  const newMaterial = new THREE.MeshStandardMaterial({
+    normalMap: normalMap,
+    metalnessMap: metalMap,
+    metalness: 1,
+    roughnessMap: metalMap,
+    roughness: 1,
+  });
+
   useEffect(() => {
     switch (target) {
       case TargetType.deckColor:
-        const newColor = new THREE.MeshStandardMaterial({
-          color: new THREE.Color(deckColor),
-        });
-        deck.material = newColor;
+        newMaterial.color = new THREE.Color(deckColor);
+        deck.material = newMaterial;
         break;
 
       case TargetType.wheelsColor:
@@ -35,14 +45,12 @@ export const Skate = ({ state }: statePropsType) => {
         break;
 
       case TargetType.texture:
-        if (deckTexture) {
-          const texture = threeTextures[+deckTexture - 1];
-          texture.wrapS = THREE.RepeatWrapping;
-          texture.wrapT = THREE.RepeatWrapping;
-          texture.repeat.set(3, 3);
-          const newPrint = new THREE.MeshStandardMaterial({ map: texture });
-          deck.material = newPrint;
-        }
+        const texture = threeTextures[+deckTexture - 1];
+        texture.wrapS = THREE.RepeatWrapping;
+        texture.wrapT = THREE.RepeatWrapping;
+        texture.repeat.set(10, 10);
+        newMaterial.map = texture;
+        deck.material = newMaterial;
         break;
 
       default:
