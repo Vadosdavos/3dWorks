@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "c49ebc5bb614322f6990",
-    "url": "/Skateboard-3d-configurator/static/css/main.66c8c041.chunk.css"
+    "revision": "30401e6445e8fb9f9994",
+    "url": "/Skateboard-3d-configurator/static/css/main.b507b646.chunk.css"
   },
   {
-    "revision": "c49ebc5bb614322f6990",
-    "url": "/Skateboard-3d-configurator/static/js/main.c49ebc5b.chunk.js"
+    "revision": "30401e6445e8fb9f9994",
+    "url": "/Skateboard-3d-configurator/static/js/main.30401e64.chunk.js"
   },
   {
-    "revision": "66c154a22e2b7b2b9b37",
-    "url": "/Skateboard-3d-configurator/static/js/1.66c154a2.chunk.js"
+    "revision": "8f1f9bdd8571ce5e7bb7",
+    "url": "/Skateboard-3d-configurator/static/js/1.8f1f9bdd.chunk.js"
   },
   {
-    "revision": "dca461ef4be695325af8",
-    "url": "/Skateboard-3d-configurator/static/js/2.dca461ef.chunk.js"
+    "revision": "b6e89c0c93f933294500",
+    "url": "/Skateboard-3d-configurator/static/js/2.b6e89c0c.chunk.js"
   },
   {
-    "revision": "48dd9b38b41c8c4f1172",
-    "url": "/Skateboard-3d-configurator/static/js/runtime~main.48dd9b38.js"
+    "revision": "e9c56618d029cc6c7516",
+    "url": "/Skateboard-3d-configurator/static/js/runtime~main.e9c56618.js"
   },
   {
     "revision": "20a3ea1c2404fac1b5f3217bf04d51dc",
@@ -52,7 +52,7 @@ self.__precacheManifest = [
     "url": "/Skateboard-3d-configurator/static/media/normalMap.293d327e.png"
   },
   {
-    "revision": "a42411e99f7fa95d04c0d782b82a5008",
+    "revision": "012ba3778b4c1679ede44ff92676da26",
     "url": "/Skateboard-3d-configurator/index.html"
   }
 ];
