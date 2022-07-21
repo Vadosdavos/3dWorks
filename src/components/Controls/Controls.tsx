@@ -59,13 +59,13 @@ export const Controls = (): JSX.Element => {
         </div>
       </li>
       <ControlGroup data={COLORS} handleFunction={handleDeckColorClick}>
-        <h5>Deck print color</h5>
+        <h5>Deck color</h5>
       </ControlGroup>
       <ControlGroup data={COLORS} handleFunction={handleWheelsColorClick}>
         <h5>Wheels color</h5>
       </ControlGroup>
       <ControlGroup data={TEXTURES} handleFunction={handleDeckTextureClick} textures={true}>
-        <h5>Deck print texture</h5>
+        <h5>Deck print</h5>
       </ControlGroup>
     </ul>
   );

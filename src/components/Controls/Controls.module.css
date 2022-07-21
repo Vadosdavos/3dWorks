@@ -35,7 +35,11 @@ input[type='color']::-webkit-color-swatch {
   border: none;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 869px) {
+  .bgColorContainer {
+    margin-left: 10px;
+  }
+
   .controlsContainer {
     display: flex;
     flex-direction: column;
@@ -45,7 +49,7 @@ input[type='color']::-webkit-color-swatch {
 
   .controlsContainer li {
     display: flex;
-    gap: 10px;
     align-items: center;
+    margin-bottom: 10px;
   }
 }

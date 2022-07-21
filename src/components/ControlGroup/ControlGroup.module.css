@@ -1,7 +1,36 @@
 .colorsContainer,
 .texturesContainer {
   display: flex;
-  column-gap: 15px;
+  flex-wrap: wrap;
+  gap: 15px;
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: all 1s;
+}
+
+.colorsContainer {
+  max-height: 150px;
+}
+
+.texturesContainer {
+  max-height: 80px;
+}
+
+.openBtn {
+  border: none;
+  display: inline-block;
+  margin: 0;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  transition: 1s;
+  font-size: 1.2rem;
+}
+
+.openBtnActive {
+  transform: rotate(90deg) translate(5px);
+  transition: 1s;
 }
 
 .controlItem {
@@ -25,14 +54,30 @@
   border-radius: 25%;
 }
 
-@media (max-width: 850px) {
-  h5 {
-    width: 125px;
-  }
+h5 {
+  display: inline-block;
 }
 
-@media (max-width: 470px) {
-  h5 {
-    width: auto;
+.openBtn {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.closedContainer {
+  transform: scaleY(0);
+  max-height: 0;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+@media (max-width: 869px) {
+  .colorsContainer,
+  .texturesContainer {
+    transform: scaleX(1) scaleY(1);
+    transform-origin: left;
+  }
+
+  .closedContainer {
+    transform: scaleX(0) scaleY(0);
   }
 }
