@@ -18,7 +18,7 @@
 
 .openBtn {
   border: none;
-  display: inline-block;
+  display: block;
   margin: 0;
   color: inherit;
   background-color: transparent;

@@ -65,7 +65,7 @@ export const Controls = (): JSX.Element => {
         <h5>Wheels color</h5>
       </ControlGroup>
       <ControlGroup data={TEXTURES} handleFunction={handleDeckTextureClick} textures={true}>
-        <h5>Deck print</h5>
+        <h5 className={styles.lastTitle}>Deck print</h5>
       </ControlGroup>
     </ul>
   );

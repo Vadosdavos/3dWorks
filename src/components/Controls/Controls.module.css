@@ -44,12 +44,16 @@ input[type='color']::-webkit-color-swatch {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 80vw;
+    width: 90vw;
   }
 
   .controlsContainer li {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+  }
+
+  .lastTitle {
+    width: 50px;
   }
 }
