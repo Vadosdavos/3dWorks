@@ -1,11 +1,11 @@
 {
-  "main.css": "/Skateboard-3d-configurator/static/css/main.b507b646.chunk.css",
-  "main.js": "/Skateboard-3d-configurator/static/js/main.30401e64.chunk.js",
-  "main.js.map": "/Skateboard-3d-configurator/static/js/main.30401e64.chunk.js.map",
+  "main.css": "/Skateboard-3d-configurator/static/css/main.bb04f14e.chunk.css",
+  "main.js": "/Skateboard-3d-configurator/static/js/main.5b7e0844.chunk.js",
+  "main.js.map": "/Skateboard-3d-configurator/static/js/main.5b7e0844.chunk.js.map",
   "static/js/1.8f1f9bdd.chunk.js": "/Skateboard-3d-configurator/static/js/1.8f1f9bdd.chunk.js",
   "static/js/1.8f1f9bdd.chunk.js.map": "/Skateboard-3d-configurator/static/js/1.8f1f9bdd.chunk.js.map",
-  "static/js/2.b6e89c0c.chunk.js": "/Skateboard-3d-configurator/static/js/2.b6e89c0c.chunk.js",
-  "static/js/2.b6e89c0c.chunk.js.map": "/Skateboard-3d-configurator/static/js/2.b6e89c0c.chunk.js.map",
+  "static/js/2.736fcfd4.chunk.js": "/Skateboard-3d-configurator/static/js/2.736fcfd4.chunk.js",
+  "static/js/2.736fcfd4.chunk.js.map": "/Skateboard-3d-configurator/static/js/2.736fcfd4.chunk.js.map",
   "runtime~main.js": "/Skateboard-3d-configurator/static/js/runtime~main.e9c56618.js",
   "runtime~main.js.map": "/Skateboard-3d-configurator/static/js/runtime~main.e9c56618.js.map",
   "static/media/tex1.jpg": "/Skateboard-3d-configurator/static/media/tex1.20a3ea1c.jpg",
@@ -16,8 +16,8 @@
   "static/media/skate.glb": "/Skateboard-3d-configurator/static/media/skate.72b3bd60.glb",
   "static/media/metalMap.png": "/Skateboard-3d-configurator/static/media/metalMap.e79c7632.png",
   "static/media/normalMap.png": "/Skateboard-3d-configurator/static/media/normalMap.293d327e.png",
-  "static/css/main.b507b646.chunk.css.map": "/Skateboard-3d-configurator/static/css/main.b507b646.chunk.css.map",
+  "static/css/main.bb04f14e.chunk.css.map": "/Skateboard-3d-configurator/static/css/main.bb04f14e.chunk.css.map",
   "index.html": "/Skateboard-3d-configurator/index.html",
-  "precache-manifest.f0ff7b9b9e9c43f947bcce21f101b66e.js": "/Skateboard-3d-configurator/precache-manifest.f0ff7b9b9e9c43f947bcce21f101b66e.js",
+  "precache-manifest.dbe71b170d5749f4659ac26972b41bfa.js": "/Skateboard-3d-configurator/precache-manifest.dbe71b170d5749f4659ac26972b41bfa.js",
   "service-worker.js": "/Skateboard-3d-configurator/service-worker.js"
 }
