@@ -17,7 +17,7 @@ export const App = (): JSX.Element => {
       </header>
       <main className={styles.mainContainer}>
         <Controls />
-        <div className={styles.canvasContainer}>
+        <section className={styles.canvasContainer}>
           <Suspense fallback={<CustomLoader />}>
             <Canvas>
               <Scene state={state.settings} />
@@ -27,7 +27,7 @@ export const App = (): JSX.Element => {
               <span>Click and drag to rotate</span>
             </div>
           </Suspense>
-        </div>
+        </section>
       </main>
       <footer className={styles.footer}>
         <div>

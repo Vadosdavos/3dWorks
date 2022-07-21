@@ -1,0 +1,38 @@
+.colorsContainer,
+.texturesContainer {
+  display: flex;
+  column-gap: 15px;
+}
+
+.controlItem {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 5px 2px rgb(170, 206, 252);
+  transition: 0.5s;
+}
+
+.controlItem:hover {
+  box-shadow: 0 0 7px 4px rgb(95, 163, 252);
+}
+
+.texturesContainer .controlItem {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80px;
+  border-radius: 25%;
+}
+
+@media (max-width: 850px) {
+  h5 {
+    width: 125px;
+  }
+}
+
+@media (max-width: 470px) {
+  h5 {
+    width: auto;
+  }
+}

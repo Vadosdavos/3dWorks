@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
 import * as THREE from 'three';
 import { ObjectMap, useLoader } from '@react-three/fiber';
 import skateModel from '../../assets/models/skate.glb';
@@ -30,7 +30,7 @@ export const Skate = ({ state }: statePropsType) => {
     roughness: 1,
   });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     switch (target) {
       case TargetType.deckColor:
         newMaterial.color = new THREE.Color(deckColor);
