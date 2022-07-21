@@ -11,7 +11,7 @@ import normalMapTex from '../../assets/textures/normalMap.png';
 
 const ROTATE_Y_90 = Math.PI * 0.5;
 
-export const Skate = ({ state }: statePropsType) => {
+export const Skate = ({ state }: statePropsType): JSX.Element => {
   const { deckColor, deckTexture, target, wheelsColor } = state;
   const skate = useLoader(GLTFLoader, skateModel) as GLTF & ObjectMap;
   const model = useRef(skate.scene);

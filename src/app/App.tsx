@@ -30,9 +30,7 @@ export const App = (): JSX.Element => {
         </section>
       </main>
       <footer className={styles.footer}>
-        <div>
-          <a href='https://github.com/Vadosdavos'>@Vadosdavos</a>, 2022
-        </div>
+        <a href='https://github.com/Vadosdavos'>@Vadosdavos</a>, 2022
       </footer>
     </>
   );

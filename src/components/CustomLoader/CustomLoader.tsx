@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './CustomLoader.module.css';
 
-export const CustomLoader = () => {
+export const CustomLoader = (): JSX.Element => {
   return (
     <div className={styles.loaderContainer}>
       <div className={styles.loaderBody}>

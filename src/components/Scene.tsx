@@ -15,7 +15,7 @@ declare global {
   }
 }
 
-export const Scene = ({ state }: statePropsType) => {
+export const Scene = ({ state }: statePropsType): JSX.Element => {
   const { bgColor } = state;
   const target = new THREE.Vector3(0, 0, 0);
   const {

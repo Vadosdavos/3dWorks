@@ -12,12 +12,12 @@ import { COLORS, TEXTURES } from '../../constants/constants';
 import { TargetType } from '../../constants/types';
 import { ControlGroup } from '../ControlGroup/ControlGroup';
 
-export const Controls = () => {
+export const Controls = (): JSX.Element => {
   const [bgColorValue, setBgColorValue] = useState('#ffffff');
   const dispatch = useDispatch();
 
   const handleDeckColorClick = useCallback(
-    (event: SyntheticEvent) => {
+    (event: SyntheticEvent): void => {
       const target = event.target as HTMLDivElement;
       dispatch(changeDeckColor(target.id));
       dispatch(changeTarget(TargetType.deckColor));
@@ -25,17 +25,23 @@ export const Controls = () => {
     [changeDeckColor, changeTarget]
   );
 
-  const handleWheelsColorClick = useCallback((event: SyntheticEvent) => {
-    const target = event.target as HTMLDivElement;
-    dispatch(changeWheelsColor(target.id));
-    dispatch(changeTarget(TargetType.wheelsColor));
-  }, []);
+  const handleWheelsColorClick = useCallback(
+    (event: SyntheticEvent): void => {
+      const target = event.target as HTMLDivElement;
+      dispatch(changeWheelsColor(target.id));
+      dispatch(changeTarget(TargetType.wheelsColor));
+    },
+    [changeWheelsColor, changeTarget]
+  );
 
-  const handleDeckTextureClick = useCallback((event: SyntheticEvent) => {
-    const target = event.target as HTMLDivElement;
-    dispatch(changeDeckTexture(target.id));
-    dispatch(changeTarget(TargetType.texture));
-  }, []);
+  const handleDeckTextureClick = useCallback(
+    (event: SyntheticEvent): void => {
+      const target = event.target as HTMLDivElement;
+      dispatch(changeDeckTexture(target.id));
+      dispatch(changeTarget(TargetType.texture));
+    },
+    [changeDeckTexture, changeTarget]
+  );
 
   const handleBgColorInput = (event: SyntheticEvent) => {
     const target = event.target as HTMLInputElement;

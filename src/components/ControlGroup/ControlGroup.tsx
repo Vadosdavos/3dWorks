@@ -9,7 +9,7 @@ type propsType = {
   textures?: boolean;
 };
 
-export const ControlGroup = ({ data, handleFunction, children, textures = false }: propsType) => {
+export const ControlGroup = ({ data, handleFunction, children, textures = false }: propsType): JSX.Element => {
   return (
     <li>
       {children}
