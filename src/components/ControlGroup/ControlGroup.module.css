@@ -81,3 +81,16 @@ h5 {
     transform: scaleX(0) scaleY(0);
   }
 }
+
+@media (max-width: 600px) {
+  .controlItem:not(.texturesContainer .controlItem) {
+    width: 25px;
+    height: 25px;
+    gap: 10px;
+  }
+
+  .colorsContainer,
+  .texturesContainer {
+    gap: 10px;
+  }
+}
