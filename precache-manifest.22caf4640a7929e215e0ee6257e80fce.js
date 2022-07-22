@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "5b7e084455fe8f7a1e03",
-    "url": "/Skateboard-3d-configurator/static/css/main.bb04f14e.chunk.css"
+    "revision": "c67e8d5957149475d122",
+    "url": "/Skateboard-3d-configurator/static/css/main.cc5a4b2b.chunk.css"
   },
   {
-    "revision": "5b7e084455fe8f7a1e03",
-    "url": "/Skateboard-3d-configurator/static/js/main.5b7e0844.chunk.js"
+    "revision": "c67e8d5957149475d122",
+    "url": "/Skateboard-3d-configurator/static/js/main.c67e8d59.chunk.js"
   },
   {
     "revision": "8f1f9bdd8571ce5e7bb7",
@@ -52,7 +52,7 @@ self.__precacheManifest = [
     "url": "/Skateboard-3d-configurator/static/media/normalMap.293d327e.png"
   },
   {
-    "revision": "69b6d393cb150b0705d7d413d31e3bd7",
+    "revision": "6e000096325962094ff36b7e72c4fd65",
     "url": "/Skateboard-3d-configurator/index.html"
   }
 ];
