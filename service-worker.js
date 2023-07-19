@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Skateboard-3d-configurator/precache-manifest.22caf4640a7929e215e0ee6257e80fce.js"
+  "/Skateboard-3d-configurator/precache-manifest.ce6e050b013fd8f3d10b613f62b7d876.js"
 );
 
 workbox.clientsClaim();
