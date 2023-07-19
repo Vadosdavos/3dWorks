@@ -4,14 +4,15 @@ import { ObjectMap, useLoader } from '@react-three/fiber';
 import skateModel from '../../assets/models/skate.glb';
 import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { TextureLoader } from 'three';
-import { statePropsType, TargetType } from '../../constants/types';
+import { Target } from '../../types/types';
 import { TEXTURES } from '../../constants/constants';
 import metalMapTex from '../../assets/textures/metalMap.png';
 import normalMapTex from '../../assets/textures/normalMap.png';
+import { SettingsState } from "../../store/slices/settingsSlice";
 
 const ROTATE_Y_90 = Math.PI * 0.5;
 
-export const Skate = ({ state }: statePropsType): JSX.Element => {
+export const Skate = ({ state }: { state: SettingsState }): JSX.Element => {
   const { deckColor, deckTexture, target, wheelsColor } = state;
   const skate = useLoader(GLTFLoader, skateModel) as GLTF & ObjectMap;
   const model = useRef(skate.scene);
@@ -32,19 +33,19 @@ export const Skate = ({ state }: statePropsType): JSX.Element => {
 
   useLayoutEffect(() => {
     switch (target) {
-      case TargetType.deckColor:
+      case Target.deckColor:
         newMaterial.color = new THREE.Color(deckColor);
         deck.material = newMaterial;
         break;
 
-      case TargetType.wheelsColor:
+      case Target.wheelsColor:
         const newWheelsColor = new THREE.MeshStandardMaterial({
           color: new THREE.Color(wheelsColor),
         });
         wheels.material = newWheelsColor;
         break;
 
-      case TargetType.texture:
+      case Target.texture:
         const texture = threeTextures[+deckTexture - 1];
         texture.wrapS = THREE.RepeatWrapping;
         texture.wrapT = THREE.RepeatWrapping;

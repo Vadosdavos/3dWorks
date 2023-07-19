@@ -5,7 +5,7 @@
   gap: 15px;
   transform: scaleY(1);
   transform-origin: top;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 
 .colorsContainer {
@@ -30,7 +30,7 @@
 
 .openBtnActive {
   transform: rotate(90deg) translate(5px);
-  transition: 1s;
+  transition: 0.5s;
 }
 
 .controlItem {
@@ -66,7 +66,7 @@ h5 {
 .closedContainer {
   transform: scaleY(0);
   max-height: 0;
-  transition: all 1s;
+  transition: all 0.5s;
   overflow: hidden;
 }
 

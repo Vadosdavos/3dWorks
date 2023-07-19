@@ -53,7 +53,7 @@ input[type='color']::-webkit-color-swatch {
     margin-bottom: 10px;
   }
 
-  .lastTitle {
+  .controlsContainer > li:last-of-type > h5 {
     width: 50px;
   }
 }

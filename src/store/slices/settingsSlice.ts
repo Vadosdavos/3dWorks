@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-export interface settingsState {
+export interface SettingsState {
   bgColor: string,
   deckColor: string,
   wheelsColor: string,
@@ -9,7 +9,7 @@ export interface settingsState {
   target: string
 }
 
-const initialState: settingsState = {
+const initialState: SettingsState = {
   bgColor: 'white',
   deckColor: '',
   wheelsColor: '',

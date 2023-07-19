@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { extend, Object3DNode, useThree } from '@react-three/fiber';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { Skate } from './Skate/Skate';
-import { statePropsType } from '../constants/types';
+import { SettingsState } from "../store/slices/settingsSlice";
 
 extend({ OrbitControls });
 
@@ -15,7 +15,7 @@ declare global {
   }
 }
 
-export const Scene = ({ state }: statePropsType): JSX.Element => {
+export const Scene = ({ state }: { state: SettingsState }): JSX.Element => {
   const { bgColor } = state;
   const target = new THREE.Vector3(0, 0, 0);
   const {

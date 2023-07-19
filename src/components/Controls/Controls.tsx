@@ -9,7 +9,7 @@ import {
 } from '../../store/slices/settingsSlice';
 import styles from './Controls.module.css';
 import { COLORS, TEXTURES } from '../../constants/constants';
-import { TargetType } from '../../constants/types';
+import { Target } from '../../types/types';
 import { ControlGroup } from '../ControlGroup/ControlGroup';
 
 export const Controls = (): JSX.Element => {
@@ -20,7 +20,7 @@ export const Controls = (): JSX.Element => {
     (event: SyntheticEvent): void => {
       const target = event.target as HTMLDivElement;
       dispatch(changeDeckColor(target.id));
-      dispatch(changeTarget(TargetType.deckColor));
+      dispatch(changeTarget(Target.deckColor));
     },
     [changeDeckColor, changeTarget]
   );
@@ -29,7 +29,7 @@ export const Controls = (): JSX.Element => {
     (event: SyntheticEvent): void => {
       const target = event.target as HTMLDivElement;
       dispatch(changeWheelsColor(target.id));
-      dispatch(changeTarget(TargetType.wheelsColor));
+      dispatch(changeTarget(Target.wheelsColor));
     },
     [changeWheelsColor, changeTarget]
   );
@@ -38,7 +38,7 @@ export const Controls = (): JSX.Element => {
     (event: SyntheticEvent): void => {
       const target = event.target as HTMLDivElement;
       dispatch(changeDeckTexture(target.id));
-      dispatch(changeTarget(TargetType.texture));
+      dispatch(changeTarget(Target.texture));
     },
     [changeDeckTexture, changeTarget]
   );
@@ -47,7 +47,7 @@ export const Controls = (): JSX.Element => {
     const target = event.target as HTMLInputElement;
     dispatch(changeBgColor(target.value));
     setBgColorValue(target.value);
-    dispatch(changeTarget(TargetType.bgColor));
+    dispatch(changeTarget(Target.bgColor));
   };
 
   return (
@@ -58,15 +58,9 @@ export const Controls = (): JSX.Element => {
           <input type='color' id='bgColorInput' value={bgColorValue} onInput={handleBgColorInput} />
         </div>
       </li>
-      <ControlGroup data={COLORS} handleFunction={handleDeckColorClick}>
-        <h5>Deck color</h5>
-      </ControlGroup>
-      <ControlGroup data={COLORS} handleFunction={handleWheelsColorClick}>
-        <h5>Wheels color</h5>
-      </ControlGroup>
-      <ControlGroup data={TEXTURES} handleFunction={handleDeckTextureClick} textures={true}>
-        <h5 className={styles.lastTitle}>Deck print</h5>
-      </ControlGroup>
+      <ControlGroup data={COLORS} title="Deck color" handleClick={handleDeckColorClick} isTextures={false} />
+      <ControlGroup data={COLORS} title="Wheels color" handleClick={handleWheelsColorClick} isTextures={false} />
+      <ControlGroup data={TEXTURES} title="Deck print" handleClick={handleDeckTextureClick} isTextures />
     </ul>
   );
 };
